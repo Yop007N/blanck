@@ -1,0 +1,7 @@
+{
+  "name": "blanck",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
