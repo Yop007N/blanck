@@ -1,3 +1,39 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>App-Study</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list id="inbox-list">
+        <ion-list-header>Usuario: {{ loggedInUser }}</ion-list-header>
+        <ion-list-header>Inicio: {{ loggedInInicio }}</ion-list-header>
+        <ion-list-header (click)="goToProfile()">
+          <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+          Perfil
+        </ion-list-header>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item>
+            <ion-icon slot="start"></ion-icon>
+            <ion-label></ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-router-outlet></ion-router-outlet>
+    </ion-content>
+  </div>
 </ion-app>

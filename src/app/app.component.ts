@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -9,5 +10,12 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private navCtrl: NavController) {}
+
+  loggedInUser = "Enrique Bobadilla";
+  loggedInInicio = "home";
+
+  goToProfile() {
+    this.navCtrl.navigateForward('/profile');
+  }
 }
